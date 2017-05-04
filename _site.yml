@@ -1,7 +1,7 @@
-name: "YOURNAME"                                  # CHANGE HERE 
+name: "Marc Kissel"                                  
 output_dir: "."
 navbar:
-  title: "YOURNAME"                               # CHANGE HERE 
+  title: "Marc Kissel"                               
   type: inverse
   left:
     - text: "Home"
@@ -19,10 +19,10 @@ navbar:
   right:
     - text: "Contact me"
       icon: fa-envelope-o
-      href: mailto:YOUREMAIL                      # CHANGE HERE 
+      href: mailto:marc.kissel@gmail.com                      # CHANGE HERE 
     - text: "GitHub"
       icon: fa-github
-      href: https://github.com/YOURGITHUB         # CHANGE HERE 
+      href: https://github.com/MarcKissel         # CHANGE HERE 
 output:
   html_document:
     theme: cosmo
