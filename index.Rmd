@@ -5,3 +5,8 @@ title: "Welcome to my website!"
 Check out the 'about' tab to learn more about my work. or simply download my CV
 
 Thanks for visiting!
+
+
+```{r echo=FALSE, out.width='25%'}
+knitr::include_graphics('C:/Users/mkissel/Documents/Code/R_projects/Git_learning/Building_website/MarcKissel3.github.io/pic.jpg')
+```
