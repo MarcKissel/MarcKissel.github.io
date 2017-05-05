@@ -13,6 +13,9 @@ navbar:
     - text: "CV"
       icon: fa-file-pdf-o
       href: cv.html
+    - text: "temp"
+      icon: fa-user
+      href: temp.html
     - text: "Blog"
       icon: fa-rss
       href: https://YOURGITHUB.github.io/blog/    # CHANGE HERE 
@@ -25,7 +28,7 @@ navbar:
       href: https://github.com/MarcKissel         # CHANGE HERE 
 output:
   html_document:
-    theme: cosmo
+    theme: paper
     highlight: textmate
     include:
       after_body: footer.html
