@@ -10,25 +10,25 @@ navbar:
     - text: "About"
       icon: fa-user 
       href: about.html
-    - text: "CV"
-      icon: fa-file-pdf-o
-      href: cv.html
-    - text: "temp"
-      icon: fa-user
-      href: temp.html
+    - text: "Research"
+      icon: fa-book
+      href: research.html
+    - text: "Teaching"
+      icon: fa-graduation-cap
+      href: teaching.html
     - text: "Blog"
       icon: fa-rss
       href: https://YOURGITHUB.github.io/blog/    # CHANGE HERE 
   right:
     - text: "Contact me"
       icon: fa-envelope-o
-      href: mailto:marc.kissel@gmail.com                      # CHANGE HERE 
+      href: mailto:marc.kissel@gmail.com                      
     - text: "GitHub"
       icon: fa-github
-      href: https://github.com/MarcKissel         # CHANGE HERE 
+      href: https://github.com/MarcKissel          
 output:
   html_document:
-    theme: paper
+    theme: flatly
     highlight: textmate
     include:
       after_body: footer.html

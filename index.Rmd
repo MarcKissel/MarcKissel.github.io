@@ -1,5 +1,5 @@
 ---
-title: "Welcome to my website!"
+title: "Thanks for visiting!"
 ---
 
 Check out the 'about' tab to learn more about my work. or simply download my CV
