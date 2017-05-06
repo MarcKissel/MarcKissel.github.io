@@ -8,5 +8,5 @@ Thanks for visiting!
 
 
 ```{r echo=FALSE, out.width='25%'}
-knitr::include_graphics('C:/Users/mkissel/Documents/Code/R_projects/Git_learning/Building_website/MarcKissel3.github.io/pic.jpg')
+knitr::include_graphics('C:/Users/mkissel/Documents/Code/R_projects/My_website/MarcKissel.github.io/pic.jpg')
 ```
