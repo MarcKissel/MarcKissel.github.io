@@ -19,12 +19,14 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ##My research
 
-## Symoblic thought
+My research is aimed at elucidating the key variables that transformed our early ancestors into modern humans. I’ve applied this framework to questions of human genetic variation, Neandertal climatic adaptations, and in understanding the processes by which hominins became human though symbolic thought and niche construction. I'm also interested in semiotics, the study of signs, and have been working on how to bring semitoics into paleoanthropology to better understand the processess of human evolution  
+
+### Symbolic thought
 
 My postdoc work at the Univeristy of Notre Dame involved creating a database of
 the evidence of human symbol-making. When creating it, we realized that it
-would be helpful to make it open-source. If you are interested, please check out
-[this link] (https://marckissel.shinyapps.io/wisdom_database/).
+would be helpful to make it open-source. Below is a map of the sites in the database.  If you are interested, please check out
+[this link](https://marckissel.shinyapps.io/wisdom_database/).
 
 
 ```{r,  include=FALSE}
@@ -59,8 +61,19 @@ a
 ```
 
 
+###Warfare in our evolutionary past
 
-## R Markdown
+While working on the creation of a dataset of the fossil record of Homo sapiens I became interested the origins of interpersonal violence and warfare. Nam Kim and I have written a book that discusses the evolutionary arc of human warfare. This book details the anthropological data on violence and the emergence of warfare, providing a holistic anthropological view of the question of when war began. We argue that “emergent warfare” must be considered in association with “emergent peace,” as the same capacities that make us human allow us to interact and socialize in very complex ways also give us creative ways to organize our behaviors, whether violent or nonviolent. This manuscript will be published in 2017 by Routledge. 
+
+This research has led to a new project that I am co-directing that examines the question of whether violence has declined or increased over our evolutionary history. It brings together ethnographic, archaeological, and biological data to suggest that some major assumptions that have been made about how war groups form are based on outdated data.
+
+
+###Selection and Drift in Neandertals
+
+This work is in parallel to my research completed at UW-Madison, which examined genetic models of hominin evolution. Alongwith colleagues, we are working on a project to test how different evolutionary forces affected the Neandertal populations of Europe
+
+
+ <!-- R Markdown
 
 This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
 
@@ -79,3 +92,4 @@ plot(pressure)
 ```
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+--> 

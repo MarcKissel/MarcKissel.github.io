@@ -2,11 +2,12 @@
 title: "Thanks for visiting!"
 ---
 
-Check out the 'about' tab to learn more about my work. or simply download my CV
+Check out the 'about' tab to learn more about my work. or simply download my CV under the Reseach tab
 
-Thanks for visiting!
 
 
 ```{r echo=FALSE, out.width='25%'}
 knitr::include_graphics('C:/Users/mkissel/Documents/Code/R_projects/My_website/MarcKissel.github.io/pic.jpg')
 ```
+
+#website: marckissel.github.io

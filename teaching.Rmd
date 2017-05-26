@@ -10,12 +10,12 @@ For many, anthropology is an esoteric, ivory-tower discipline with no real world
 
 
 
-Introduction to Anthropology 
-Fundamentals of Biological Anthropology
-Introduction to World Prehistory
-Archaeology of North America
-Human Skeletal Anatomy 
-Human Evolution: Violence and Virtues
-Learning R for Statistical Computing
+Introduction to Anthropology   
+Fundamentals of Biological Anthropology  
+Introduction to World Prehistory  
+Archaeology of North America  
+Human Skeletal Anatomy   
+Human Evolution: Violence and Virtues  
+Learning R for Statistical Computing  
 
 
