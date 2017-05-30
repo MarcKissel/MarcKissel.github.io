@@ -10,4 +10,4 @@ Check out the 'about' tab to learn more about my work. or simply download my CV 
 knitr::include_graphics('C:/Users/mkissel/Documents/Code/R_projects/My_website/MarcKissel.github.io/pic.jpg')
 ```
 
-#website: marckissel.github.io
+<!-- website: marckissel.github.io -->

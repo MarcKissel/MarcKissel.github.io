@@ -2,6 +2,14 @@
 title: "About me"
 ---
 
-## Header
+## All about me
 
-I'm a paleoanthropologist interested in the causes and consequences of human evolution
+I'm a paleoanthropologist interested in the causes and consequences of human evolution. I'm currently a postdoctoral researcher at the [Univeristy of Notre Dame](http://anthropology.nd.edu/faculty-and-staff/faculty-by-alpha/marc-kissel/) but will be moving to [Appalachian State University](https://anthro.appstate.edu/) in the Fall and very excited to start working there!
+
+
+```{r echo=FALSE, out.width='20%'}
+knitr::include_graphics('C:/Users/mkissel/Documents/Code/R_projects/My_website/MarcKissel.github.io/marc_kissel_profile_pic.jpg')
+```
+
+
+

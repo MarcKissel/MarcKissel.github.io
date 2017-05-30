@@ -18,7 +18,7 @@ navbar:
       href: teaching.html
     - text: "Blog"
       icon: fa-rss
-      href: https://YOURGITHUB.github.io/blog/    # CHANGE HERE 
+      href: blog.html  # CHANGE HERE 
   right:
     - text: "Contact me"
       icon: fa-envelope-o

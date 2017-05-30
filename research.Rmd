@@ -9,7 +9,7 @@ output: html_document
 <a href="CV.pdf#" class="download" title="Download CV as PDF">Download my CV here</a>			
 
 
-## below this I need to update
+
 
 
 ```{r setup, include=FALSE}
