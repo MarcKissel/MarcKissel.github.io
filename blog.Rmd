@@ -20,38 +20,23 @@ shiny::includeHTML("plot2.html")
 To examine how DCI changes over time, the following graph explores a subset of the data (due to limit in storage space). All these data are available on the PNAS website.
 
 
-
-```{r, echo=FALSE}
+```{r, include=FALSE}
 library(tidyverse)
 library(ggplot2)
 library(plotly)
-
-#accumualte_by from https://plot.ly/r/cumulative-animations/
-
-accumulate_by <- function(dat, var) {
-  var <- lazyeval::f_eval(var, dat)
-  lvls <- plotly:::getLevels(var)
-  dats <- lapply(seq_along(lvls), function(x) {
-    cbind(dat[var %in% lvls[seq(1, x)], ], frame = lvls[[x]])
-  })
-  dplyr::bind_rows(dats)
-}
+#setup data
+X_factor <- read_csv("X_Factor_Dataset.csv")
+X_factor <-  X_factor %>% gather(value = X, key = country, Belgium:Iraq)
 
 
+p <- ggplot(X_factor, aes( x=Year, y = X, group=country, color = country)) + geom_line()
+p <- ggplotly(p)
+p
 
-X_factor_sub <- read_csv("X_Factor_Dataset_subset.csv")
-X_factor_sub <-  X_factor_sub %>% gather(value = X, key = country, Belgium:Iraq)
-x <- X_factor_sub %>% accumulate_by(~Year)
-
-
-p1 <- x %>% plot_ly(x = ~Year, y = ~X, split = ~country, frame = ~frame, type='scatter', mode = 'lines', line = list(simplyfy = F) ) %>%
-  layout(title = "DCI since 1949") %>% animation_opts(
-    frame = 100, 
-    transition = 0, 
-    redraw = FALSE) %>% animation_slider(
-      currentvalue = list(
-        prefix = "Year "))
-
-p1
 ```
+
+```{r,echo=FALSE}
+p
+```
+
 

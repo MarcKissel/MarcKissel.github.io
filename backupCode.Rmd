@@ -1,0 +1,69 @@
+---
+title: "Backup"
+output: html_document
+---
+
+
+
+```{r, include=FALSE}
+library(tidyverse)
+library(ggplot2)
+library(plotly)
+
+#accumualte_by from https://plot.ly/r/cumulative-animations/
+
+accumulate_by <- function(dat, var) {
+  var <- lazyeval::f_eval(var, dat)
+  lvls <- plotly:::getLevels(var)
+  dats <- lapply(seq_along(lvls), function(x) {
+    cbind(dat[var %in% lvls[seq(1, x)], ], frame = lvls[[x]])
+  })
+  dplyr::bind_rows(dats)
+}
+
+
+
+X_factor_sub <- read_csv("X_Factor_Dataset_subset.csv")
+X_factor_sub <-  X_factor_sub %>% gather(value = X, key = country, Belgium:Iraq)
+x <- X_factor_sub %>% accumulate_by(~Year)
+
+
+p1 <- x %>% plot_ly(x = ~Year, y = ~X, split = ~country, frame = ~frame, type='scatter', mode = 'lines', line = list(simplyfy = F) ) %>%
+  layout(title = "DCI since 1949") %>% animation_opts(
+    frame = 100, 
+    transition = 0, 
+    redraw = FALSE) %>% animation_slider(
+      currentvalue = list(
+        prefix = "Year "))
+
+p1
+```
+
+
+
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
