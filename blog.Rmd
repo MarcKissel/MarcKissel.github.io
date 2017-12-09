@@ -3,4 +3,55 @@ title: "blog"
 output: html_document
 ---
 
-###Coming soon
+###Oka et al. 2017
+
+Rahul Oka, Agustin Fuentes, Susan Sheridan, Mark Golitko, Nam Kim, and myself recently published a paper in PNAS looking at how demographics affects both the size of a war group and conflict causalities. Many scholars have noted that in hunter-gather populations, the number of people involved in fighting can be as much as 40% of the population, but this number drops in big state-level societies. We collected data on ~300 societies to study the link between population and the size of a war group, and conflict-related casualties from 430 conflicts. We show that, as population goes up, the proportion of people involved in conflict decreases.  In other words, it is not that states prevent violence, but rather that other factors, such as the need to feed, cloth, and arm a war group makes it harder to involve a large percentage of people in more complex societies. 
+You can read the paper here
+
+For an interactive take at some of these data, the following plot plots war group size as a function of population by year. The size of the circle is scaled to the size of the army.  
+
+
+
+```{r, echo=FALSE}
+shiny::includeHTML("plot2.html") 
+```
+
+
+To examine how DCI changes over time, the following graph explores a subset of the data (due to limit in storage space). All these data are available on the PNAS website.
+
+
+
+```{r, echo=FALSE}
+library(tidyverse)
+library(ggplot2)
+library(plotly)
+
+#accumualte_by from https://plot.ly/r/cumulative-animations/
+
+accumulate_by <- function(dat, var) {
+  var <- lazyeval::f_eval(var, dat)
+  lvls <- plotly:::getLevels(var)
+  dats <- lapply(seq_along(lvls), function(x) {
+    cbind(dat[var %in% lvls[seq(1, x)], ], frame = lvls[[x]])
+  })
+  dplyr::bind_rows(dats)
+}
+
+
+
+X_factor_sub <- read_csv("X_Factor_Dataset_subset.csv")
+X_factor_sub <-  X_factor_sub %>% gather(value = X, key = country, Belgium:Iraq)
+x <- X_factor_sub %>% accumulate_by(~Year)
+
+
+p1 <- x %>% plot_ly(x = ~Year, y = ~X, split = ~country, frame = ~frame, type='scatter', mode = 'lines', line = list(simplyfy = F) ) %>%
+  layout(title = "DCI since 1949") %>% animation_opts(
+    frame = 100, 
+    transition = 0, 
+    redraw = FALSE) %>% animation_slider(
+      currentvalue = list(
+        prefix = "Year "))
+
+p1
+```
+

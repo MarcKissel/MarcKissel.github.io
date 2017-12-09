@@ -6,7 +6,7 @@ output: html_document
 
 
 
-<a href="CV.pdf#" class="download" title="Download CV as PDF">Download my CV here</a>			
+<a href="KisselCVnov2017.pdf#" class="download" title="Download CV as PDF">Download my CV here</a>			
 
 
 
@@ -19,7 +19,8 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ##My research
 
-My research is aimed at elucidating the key variables that transformed our early ancestors into modern humans. I’ve applied this framework to questions of human genetic variation, Neandertal climatic adaptations, and in understanding the processes by which hominins became human though symbolic thought and niche construction. I'm also interested in semiotics, the study of signs, and have been working on how to bring semitoics into paleoanthropology to better understand the processess of human evolution  
+My research is aimed at elucidating the key variables that transformed our early ancestors into modern humans, while emphasizing humans as both biological and cultural beings. In order to do this, we need to apply  anthropological insight to the questions of human origins. I’ve applied this framework to questions of human genetic variation, Neandertal climatic adaptations, and in understanding the processes by which hominins became human though symbolic thought and niche construction. I'm also interested in semiotics, the study of signs, and have been working on how to bring semiotics into paleoanthropology to better understand the processes of human evolution  
+
 
 ### Symbolic thought
 
@@ -61,12 +62,12 @@ a
 ```
 
 
+
 ###Warfare in our evolutionary past
 
-While working on the creation of a dataset of the fossil record of Homo sapiens I became interested the origins of interpersonal violence and warfare. Nam Kim and I have written a book that discusses the evolutionary arc of human warfare. This book details the anthropological data on violence and the emergence of warfare, providing a holistic anthropological view of the question of when war began. We argue that “emergent warfare” must be considered in association with “emergent peace,” as the same capacities that make us human allow us to interact and socialize in very complex ways also give us creative ways to organize our behaviors, whether violent or nonviolent. This manuscript will be published in 2017 by Routledge. 
+While working on the creation of a dataset of the fossil record of Homo sapiens I became interested the origins of interpersonal violence and warfare. Nam Kim and I have [written a book](https://www.routledge.com/Emergent-Warfare-in-Our-Evolutionary-Past/Kim-Kissel/p/book/9781629582665) that discusses the evolutionary arc of human warfare. This book details the anthropological data on violence and the emergence of warfare, providing a holistic anthropological view of the question of when war began. We argue that “emergent warfare” must be considered in association with “emergent peace,” as the same capacities that make us human allow us to interact and socialize in very complex ways also give us creative ways to organize our behaviors, whether violent or nonviolent. This manuscript will be published in 2017 by Routledge. 
 
-This research has led to a new project that I am co-directing that examines the question of whether violence has declined or increased over our evolutionary history. It brings together ethnographic, archaeological, and biological data to suggest that some major assumptions that have been made about how war groups form are based on outdated data.
-
+This research has led to a new project  that examines the question of whether violence has declined or increased over our evolutionary history. It brings together ethnographic, archaeological, and biological data. Some of this research has recently been published in PNAS (Oka et al. 2017), looking at factors that effect the size of war groups. See the [blog section](https://marckissel.github.io/blog.html) of this site for more details
 
 ###Selection and Drift in Neandertals
 
