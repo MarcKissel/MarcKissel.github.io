@@ -40,6 +40,13 @@ p1
 ```
 
 
+OTHER MOtion plot
+
+```{r, echo=FALSE}
+shiny::includeHTML("plot2.html") 
+```
+
+
 
 
 

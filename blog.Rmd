@@ -10,10 +10,10 @@ You can read the paper here
 
 For an interactive take at some of these data, the following plot plots war group size as a function of population by year. The size of the circle is scaled to the size of the army.  
 
+![alttext](outputMotion.gif)
 
+```{r}
 
-```{r, echo=FALSE}
-shiny::includeHTML("plot2.html") 
 ```
 
 
@@ -29,7 +29,7 @@ X_factor <- read_csv("X_Factor_Dataset.csv")
 X_factor <-  X_factor %>% gather(value = X, key = country, Belgium:Iraq)
 
 
-p <- ggplot(X_factor, aes( x=Year, y = X, group=country, color = country)) + geom_line()
+p <- ggplot(X_factor, aes( x=Year, y = X, group=country, color = country)) + geom_line() + ylab("DCI")
 p <- ggplotly(p)
 p
 
