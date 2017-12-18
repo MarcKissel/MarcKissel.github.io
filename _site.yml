@@ -1,31 +1,31 @@
-name: "Marc Kissel"                                  
-output_dir: "."
+name: Marc Kissel
+output_dir: '.'
 navbar:
-  title: "Marc Kissel"                               
+  title: Marc Kissel
   type: inverse
   left:
-    - text: "Home"
-      icon: fa-home
-      href: index.html
-    - text: "About"
-      icon: fa-user 
-      href: about.html
-    - text: "Research"
-      icon: fa-book
-      href: research.html
-    - text: "Teaching"
-      icon: fa-graduation-cap
-      href: teaching.html
-    - text: "Blog"
-      icon: fa-rss
-      href: blog.html  # CHANGE HERE 
+  - text: Home
+    icon: fa-home
+    href: index.html
+  - text: About
+    icon: fa-user
+    href: about.html
+  - text: Research
+    icon: fa-book
+    href: research.html
+  - text: Teaching
+    icon: fa-graduation-cap
+    href: teaching.html
+  - text: Blog
+    icon: fa-rss
+    href: blog.html
   right:
-    - text: "Contact me"
-      icon: fa-envelope-o
-      href: mailto:marc.kissel@gmail.com                      
-    - text: "GitHub"
-      icon: fa-github
-      href: https://github.com/MarcKissel          
+  - text: Contact me
+    icon: fa-envelope-o
+    href: mailto:marc.kissel@gmail.com
+  - text: GitHub
+    icon: fa-github
+    href: https://github.com/MarcKissel
 output:
   html_document:
     theme: flatly
@@ -33,3 +33,6 @@ output:
     include:
       after_body: footer.html
     css: styles.css
+    lib_dir: site_libs
+    self_contained: no
+
