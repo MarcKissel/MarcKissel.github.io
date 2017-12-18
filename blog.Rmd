@@ -1,6 +1,6 @@
 ---
 title: "News"
-
+always_allow_html: yes
 output:
   
   html_document: default
@@ -46,14 +46,15 @@ X_factor <- read_csv("X_Factor_Dataset.csv")
 X_factor <-  X_factor %>% gather(value = X, key = country, Belgium:Iraq)
 
 
-p <- ggplot(X_factor, aes( x=Year, y = X, group=country, color = country)) + geom_line() + ylab("DCI")
-p <- ggplotly(p)
+p <- ggplot(X_factor, aes( x=Year, y = X, group=country, color = country)) + geom_line() + ylab("DCI") 
+p <- ggplotly(p, height = 600, width = 600)
 p
 
 ```
 
-```{r,echo=FALSE, out.width=10%,out.height=10%}
+```{r,echo=FALSE}
 p
 ```
+
 
 
