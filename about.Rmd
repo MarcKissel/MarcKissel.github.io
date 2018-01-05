@@ -11,6 +11,7 @@ I'm a paleoanthropologist interested in the causes and consequences of human evo
 
 
 
+
 ```{r echo=FALSE, out.width='20%'}
 knitr::include_graphics('C:/Users/mkissel/Documents/Code/R_projects/My_website/MarcKissel.github.io/marc_kissel_profile_pic.jpg')
 ```

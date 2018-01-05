@@ -4,19 +4,20 @@ output: html_document
 ---
 ### Teaching
 
-An anthropological perspective is an integral part of a college student’s education and will serve them well ass they become the next generation of student-scholars. In class I direct content towards a better understanding of the causes and consequences of human variation, equipping students with the skills to apply anthropological concepts to their daily lives.
+An anthropological perspective is an integral part of a college student’s education and will serve them well a s they become the next generation of student-scholars. In class I direct content towards a better understanding of the causes and consequences of human variation, equipping students with the skills to apply anthropological concepts to their daily lives.
 
 
 **Classes taught**
 
 * Introduction to Anthropology
+* Gender, Race, and Class
 * Fundamentals of Biological Anthropology
-* Introduction to World Prehistory
-* Archaeology of North America
+* Our Primate Heritage
+* Human Evolution
 * Human Skeletal Anatomy
 * Human Evolution: Violence and Virtues
 * Learning R for Statistical Computing
-* Our Primate Heritage
-* Gender, Race, and Class
+* Introduction to World Prehistory
+* Archaeology of North America 
 
 

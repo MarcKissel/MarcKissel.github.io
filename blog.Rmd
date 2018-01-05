@@ -27,14 +27,16 @@ And [Science coverage here](http://www.sciencemag.org/news/2017/12/why-human-soc
 
 For an interactive take at some of these data, the following plot plots war group size as a function of population by year. The size of the circle is scaled to the size of the army.  
 
-![alttext](outputMotion.gif)
+![](outputMotion.gif)
 
 ```{r}
 
 ```
 
 
-To examine how DCI changes over time, the following graph explores a subset of the data (due to limit in storage space). All these data are available on the PNAS website.
+To examine how DCI changes over time, the following graph explores a subset of the data (due to limit in storage space). If you click on a specific country you can isolate the trace.
+
+
 
 
 ```{r, include=FALSE}
@@ -52,9 +54,10 @@ p  %>% layout(autosize = F, width = 600, height = 600)
 
 ```
 
-```{r,echo=FALSE}
+```{r,echo=FALSE, warning=FALSE}
 p  %>% layout(autosize = F, width = 600, height = 600)
 ```
 
 
 
+All these data are available on the PNAS website.

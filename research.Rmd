@@ -1,14 +1,15 @@
 ---
-title: "research"
+title: "My research"
 output: html_document
 ---
+
 ## My C.V.
 
 
 
 <a href="KisselCVnov2017.pdf#" class="download" title="Download CV as PDF">Download my CV here</a>			
 
-
+Many of my papers can be found on my [Academia.edu page](https://nd.academia.edu/MarcKissel) or just email me if you want a copy.
 
 
 
@@ -17,7 +18,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 
-##My research
+
 
 My research is aimed at elucidating the key variables that transformed our early ancestors into modern humans, while emphasizing humans as both biological and cultural beings. In order to do this, we need to apply  anthropological insight to the questions of human origins. I’ve applied this framework to questions of human genetic variation, Neandertal climatic adaptations, and in understanding the processes by which hominins became human though symbolic thought and niche construction. I'm also interested in semiotics, the study of signs, and have been working on how to bring semiotics into paleoanthropology to better understand the processes of human evolution  
 
@@ -72,6 +73,14 @@ This research has led to a new project  that examines the question of whether vi
 ###Selection and Drift in Neandertals
 
 This work is in parallel to my research completed at UW-Madison, which examined genetic models of hominin evolution. Alongwith colleagues, we are working on a project to test how different evolutionary forces affected the Neandertal populations of Europe
+
+
+###Transdisiplinary work
+
+My postdoc at Notre Dame was co-sponsored by the [Center for Theology, Science and Human Flourishing]( http://ctshf.nd.edu/). I worked alongside theologians, philosophers, psychologists, and other scholars tracking the evolution of human wisdom. As a trained anthropologist, I will admit that when starting this project my knowledge of what theologians did was pretty rudimentary. However, after numerous conversations I’ve come around to the notion that such discussion are not only fruitful, but necessary. Discussions about human origins are by their very nature political ones and we need to be cognizant of how the facts of human evolution can often be misused, intentionally or not, by people wishing to cause divisions and create hostile situations between groups. 
+Some of this work has been published in a new book [The Evolution of Human Wisdom]( https://www.amazon.com/Evolution-Human-Wisdom-Celia-Deane-Drummond/dp/1498548458) which I can highly recommend to anyone interested in these kinds of conversations. 
+ 
+
 
 
  <!-- R Markdown
