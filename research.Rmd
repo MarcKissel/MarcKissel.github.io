@@ -7,7 +7,7 @@ output: html_document
 
 
 
-<a href="KisselCVnov2017.pdf#" class="download" title="Download CV as PDF">Download my CV here</a>			
+<a href="KisselCVDec2017.pdf#" class="download" title="Download CV as PDF">Download my CV here</a>			
 
 Many of my papers can be found on my [Academia.edu page](https://nd.academia.edu/MarcKissel) or just email me if you want a copy.
 
