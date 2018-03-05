@@ -19,6 +19,7 @@ navbar:
   - text: Blog
     icon: fa-rss
     href: blog.html
+ 
   right:
   - text: Contact me
     icon: fa-envelope-o

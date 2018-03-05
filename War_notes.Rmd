@@ -1,0 +1,262 @@
+---
+title: "War_Notes_upload"
+author: "Marc Kissel"
+date: "February 1, 2018"
+output: html_document
+---
+
+
+```{r setup, include=FALSE, echo=FALSE}
+knitr::opts_chunk$set(echo = FALSE) #note echo = false unless otherwise said
+library(tidyverse)
+library(ggridges)
+library(DT)
+library(plotly)
+library(knitr)
+library(kableExtra)
+library(grid)
+library(gridExtra)
+```
+
+### notes on Oka et al. 2017 "Population is the main driver of war group size and conflict casualties"
+This is a working copy looking at some of the data from Oka et al. to try to explain it and use some visualization techniques to examine the results interatively
+
+##looking at the data
+
+```{r datatable for war, warning=FALSE, message= FALSE}
+war <- read_csv("PopSizeTemp.csv") ##### or temp file?
+```
+
+
+First, going to look at Figure 2a from our paper, which compares population to war group size.
+The data comes from dataset S1, which has `r nrow(war)` entries. Below is an interactive table showing all the data
+
+```{r}
+datatable(war, width = 600)
+```
+
+
+
+
+
+The following figure is similar to the published figure, but you can hover over each point to examine the data more carefully
+
+
+
+
+```{r figure 1a1, warning = FALSE}
+#plot_Fig1a1 <- ggplot() + geom_point(data = war, aes(x= log(Population), y = log(Overall_War_Group_Size_W), color = Time_Type))+ geom_smooth(data = war, aes(x= log(Population), y = log(Overall_War_Group_Size_W), group=1),method="lm") + geom_point(data= war, aes(x= log(Population), y = log(W.P), color = Time_Type)) + geom_smooth(data = war, aes(x= log(Population), y = log(W.P), group=1),method="lm")
+
+
+plot_Fig1a1 <- ggplot() + geom_point(data = war, aes(x= log(Population), y = log(Overall_War_Group_Size_W), color = Time_Type, text = paste("Society: ", Society) ))+ geom_smooth(data = war, aes(x= log(Population), y = log(Overall_War_Group_Size_W), group=1),method="lm") + geom_point(data= war, aes(x= log(Population), y = log(W.P), color = Time_Type, text = paste("Society: ", Society))) + geom_smooth(data = war, aes(x= log(Population), y = log(W.P), group=1),method="lm")
+
+```
+
+
+```{r, warning=FALSE, message= FALSE}
+ggplotly(plot_Fig1a1, height = 600, width = 600)
+```
+#Fig1a: Scaled distribution of P vs. W and W/P from Dataset S1 (n = 295). W and W/p
+
+
+
+```{r figure 1a2, warning=FALSE, , message= FALSE}
+
+####grouping by type of society
+
+
+plot_Fig1a2 <- ggplot() + geom_point(data = war, aes(x= log(Population), y = log(Overall_War_Group_Size_W), color = Type_of_Society, text = Society))+ geom_smooth(data = war, aes(x= log(Population), y = log(Overall_War_Group_Size_W), group=1),method="lm") + geom_point(data= war, aes(x= log(Population), y = log(W.P), color = Type_of_Society, text = Society)) + geom_smooth(data = war, aes(x= log(Population), y = log(W.P), group=1),method="lm")
+
+
+```
+
+```{r, warning=FALSE, message= FALSE}
+#ggplotly(plot_Fig1a2)
+```
+
+
+
+
+
+
+```{r datatable for fir1b, warning=FALSE, message= FALSE}
+fig1b <- read_csv("w_c.csv")
+fig1b$Conflict_Name<-iconv(enc2utf8(fig1b$Conflict_Name),sub="byte") #fix the format of Conflict col
+
+```
+
+Next, we can look at figure 2b, which examines the scaled distribution of W vs. C and
+C/W from Dataset S2, which has `r nrow(fig1b)` entries.
+
+
+```{r}
+datatable(fig1b)
+```
+
+```{r figure 1b, warning = FALSE, message= FALSE}
+plot_Fig1b <- ggplot() + geom_point(data = fig1b, aes(x= log(Total_Combatants_W), y = log(Casualties_C), color = Time_Type, text = paste("Conflict name: ", Conflict_Name) ))+ geom_smooth(data = fig1b, aes(x= log(Total_Combatants_W), y = log(Casualties_C), group=1),method="lm") + geom_point(data= fig1b, aes(x= log(Total_Combatants_W), y = log(C_W), color = Time_Type, text = paste("Conflict name: ", Conflict_Name))) + geom_smooth(data = fig1b, aes(x= log(Total_Combatants_W), y = log(C_W), group=1),method="lm")
+ggplotly(plot_Fig1b, height = 600, width = 600)
+
+
+```
+
+
+
+
+
+##Examining DCI
+
+```{r data for interactive DCI, message=FALSE}
+DCI <- read_csv("X_Factor_Dataset.csv")
+#setup data
+DCI_2 <-  read_csv("DCI_edited.csv")
+
+```
+
+
+Demographic Conflict Investment (DCI) is a relative measure of the number of individuals involved in conflict accounting, for scale in group population. Our data suggests that there is no difference in DCI between small-scale societies observed during times of conflict and contemporary or recent state-level societies preparing for or engaged in active conflict. 
+
+Even more interesting, it is seen as a measure of conflict investment. It is strongly correlated
+with the most commonly used measure of investment in conflict, the global militarization index, but can be applied to any population or social system. It thus can be used to track changes in conflict
+investment over time for any geographic or temporal context provided that population and war group size can be reliably measured or estimated.
+
+####Basic data
+
+Interactive  version of the dataset
+
+```{r}
+DCI_interact <-  DCI %>% gather(value = X, key = country, Belgium:Iraq)
+datatable(DCI_interact)
+```
+
+
+Below are some results
+
+First, lets look at the mean DCI vakues for each country
+
+
+```{r}
+DCI_interact <-  DCI %>% gather(value = X, key = country, Belgium:Iraq)
+DCI_summary <- DCI_interact %>% group_by(country) %>% summarise(DCI_mean = mean(X, na.rm = TRUE), DCI_sd = sd(X, na.rm = TRUE))
+datatable(DCI_summary)
+```
+
+The DCI mean for the whole dataset is `r mean(DCI_summary$DCI_mean)`
+
+
+To examine this data visually, the next graph shows the DCI range for each country, giving the mean and the 1 sd range
+
+
+
+```{r}
+p <- ggplot(data = DCI_summary, aes(x = reorder(country, DCI_mean), y = DCI_mean, color = country) )
+p + geom_pointrange(aes(ymin = DCI_mean - DCI_sd, ymax = DCI_mean + DCI_sd)) +coord_flip() + labs(title= "DCI range mean +/- sd", y="DCI range", x = NULL) + guides(color = FALSE)
+```
+
+
+
+
+## examine a boxplot of DCI values
+
+
+```{r}
+#p <- ggplot(data=DCI_interact, aes(x= country, y = X))
+#p + geom_boxplot() + coord_flip() #flip cord to make easier to read
+```
+
+
+```{r, warning= FALSE, error=FALSE}
+p <- ggplot(data=DCI_interact, aes(x=reorder(country, X, na.rm=TRUE), y = X, fill= country))
+DCI_box <- p + geom_boxplot() +labs(x=NULL, y = "DCI values", title = "boxplot of DCI") +coord_flip() + guides(fill=FALSE) #last argument is so that the legend doesn't show up
+DCI_box
+            
+```
+
+
+#Now lets see interactive version of above
+
+```{r, warning=FALSE, error=FALSE, message = FALSE}
+#ggplotly(DCI_box)
+```
+
+
+
+We also can do this with points...
+
+
+
+
+```{r, warning=FALSE, error=FALSE}
+p <- ggplot(data=DCI_interact, aes(x=reorder(country, X, na.rm=TRUE), y = X, color= country))
+p + geom_point() +labs(x=NULL, y = "DCI values", title = "points of DCI") +coord_flip() + guides(color=FALSE) + geom_jitter(width = .15)
+DCI_points <- p + geom_point() +labs(x=NULL, y = "DCI values", title = "points of DCI") +coord_flip() + guides(color=FALSE) + geom_jitter(width = .15)
+```
+interactive version of the above
+
+```{r, warning=FALSE, error=FALSE, message=FALSE}
+ggplotly(DCI_points)
+```
+
+
+
+
+
+#DCI values over time
+
+Below is an interactive version of the DCI plots.
+double-click on a country to isolate its trace and then click on another country to compare how the DCI changes over time. 
+
+```{r interactive plot, message=FALSE}
+
+#setup data
+
+DCI_interact <-  DCI %>% gather(value = X, key = country, Belgium:Iraq)
+
+
+plot_DCI <- ggplot(DCI_interact, aes( x=Year, y = X, group=country, color = country)) + geom_line() + ylab("DCI")
+plot_DCI <- ggplotly(plot_DCI, height = 600, width = 800)
+#p
+
+#plot_DCI %>% layout(autosize = F, width = 800, height = 800)
+
+plot_DCI
+```
+
+#motion plot for the DCI
+
+Press play to watch how DCI changes over time. the size of the circle represents the DCI value
+
+```{r motion plot DCI, message=FALSE, warning=FALSE}
+#DCI_motion <-ggplot(DCI_interact, aes(x= Year, y = X, group =country, frame = Year, #color = country)) + geom_point() 
+                     
+
+```
+
+
+```{r, message=FALSE, warning=FALSE}
+
+#ggplotly(DCI_motion, height = 600, width = 800)
+
+
+#ggplotly(DCI_motion, height = 600, width = 800)
+```
+
+
+
+```{r motion plot DCI with size, message=FALSE, warning=FALSE}
+DCI_motion <-ggplot(DCI_interact, aes(x= Year, y = X, group =country, frame = Year, color = country, label=country, size = X)) + geom_point() + geom_label(aes(Year, X, label=country)) 
+                     
+
+```
+
+
+```{r, message=FALSE, warning=FALSE}
+
+ggplotly(DCI_motion, height = 600, width = 800)
+
+
+#ggplotly(DCI_motion, height = 600, width = 800)
+```
+
+
+

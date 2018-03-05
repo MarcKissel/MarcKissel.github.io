@@ -4,7 +4,6 @@ title: "About me"
 
 <!-- website: marckissel.github.io -->
 
-## All about me
 
 I'm a paleoanthropologist interested in the causes and consequences of human evolution. I'm currently teaching at [Appalachian State University](https://anthro.appstate.edu/) and very excited to be working here!
 
